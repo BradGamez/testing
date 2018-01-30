@@ -28,7 +28,7 @@ bot.on('message' , message => {
 
 bot.on('message' , message => {                            
   if(message.content.toLowerCase() == prefix + "ping"){
-      message.channel.send(Math.Floor(bot.ping))
+      message.channel.send(Math.round(bot.ping))
   }
 });
 
