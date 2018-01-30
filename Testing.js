@@ -7,7 +7,7 @@ bot.on('message', message => {
     var author = message.author;
     var args = message.content.split(' '); var g = " "; for(var i = 1; i < args.length; i++){ g = g+" "+args[i]; }
     if (message.content.startsWith(prefix + 'setplayingstatus')) {
-        bot.user.setGame(g)
+        bot.user.setGame(g,1)
         var embed = new Discord.RichEmbed();
         if (message.author.bot) return;
         embed.setColor('BLUE');
