@@ -33,7 +33,7 @@ bot.on('message' , message => {
     		var ping = m.createdTimestamp - message.createdTimestamp
                     embed.setColor('BLUE');
                     embed.setDescription("Latency ping" + ping + "\nApi ping" + Math.round(bot.ping) + 'ms')
-                    message.channel.send({embed});
+                    m.edit({embed});
                 }})     
 
 bot.login(process.env.BOT_TOKEN)
