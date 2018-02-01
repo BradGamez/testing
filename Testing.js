@@ -30,9 +30,9 @@ bot.on('message' , message => {
                 var embed = new Discord.RichEmbed();                                                        
                 if (message.content.toLowerCase() === prefix + "ping") {
    		const m = await message.channel.send("Ping?");
-    		var ping = m.createdTimestamp - message.createdTimestamp
+    		var ping = Math.round(m.createdTimestamp - message.createdTimestamp)
                     embed.setColor('BLUE');
-                    embed.setDescription("Latency ping" + ping + "\nApi ping" + Math.round(bot.ping) + 'ms')
+                    embed.setDescription("Latency ping " + ping + "ms\nApi ping " + Math.round(bot.ping) + 'ms')
                     m.edit({embed});
                 }})     
 
