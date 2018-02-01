@@ -26,10 +26,14 @@ bot.on('message' , message => {
 }
 });
 
-bot.on('message' , message => {                            
-  if(message.content.toLowerCase() == prefix + "ping"){
-      message.channel.send(Math.round(bot.ping))
-  }
-});
+ bot.on('message' , message => {
+                var embed = new Discord.RichEmbed();                                                        
+                if (message.content.toLowerCase() === prefix + "ping") {
+   		const m = await message.channel.send("Ping?");
+    		var ping = m.createdTimestamp - message.createdTimestamp
+                    embed.setColor('BLUE');
+                    embed.setDescription("Latency ping" + ping + "\nApi ping" + Math.round(bot.ping) + 'ms')
+                    message.channel.send({embed});
+                }})     
 
 bot.login(process.env.BOT_TOKEN)
