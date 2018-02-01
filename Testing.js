@@ -26,7 +26,7 @@ bot.on('message' , message => {
 }
 });
 
- bot.on('message' , message => {
+ bot.on('message' , async message => {
                 var embed = new Discord.RichEmbed();                                                        
                 if (message.content.toLowerCase() === prefix + "ping") {
    		const m = await message.channel.send("Ping?");
