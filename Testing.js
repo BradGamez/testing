@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const math = require('mathjs');
 const prefix = "--"
 
 bot.on('message', message => {
@@ -44,7 +45,7 @@ bot.on('message', message => {
       var embed = new Discord.RichEmbed();
       if (message.author.bot) return;
       embed.setColor('BLUE');
-      embed.setDescription("Preview : " + g + "\n\nAnswer : " + Math.eval(g));
+      embed.setDescription("Preview : " + g + "\n\nAnswer : " + math.eval(g));
     message.channel.send({embed});
   }
 });
