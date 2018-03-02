@@ -44,7 +44,7 @@ bot.on('message', message => {
       var embed = new Discord.RichEmbed();
       if (message.author.bot) return;
       embed.setColor('BLUE');
-      embed.setDescription("Preview : " + g + "\n\nAnswer : " + Math(g));
+      embed.setDescription("Preview : " + g + "\n\nAnswer : " + Math.round(g));
     message.channel.send({embed});
   }
 });
